@@ -1,0 +1,34 @@
+{
+  "grammars": [
+    {
+      "name": "lhaskell",
+      "camelcase": "LiterateHaskell",
+      "scope": "source.lhaskell",
+      "file-types": [
+        ".lhs"
+      ],
+      "injection-regex": "^lhaskell$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Literate Haskell grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Andre Marianiello",
+        "email": "andremarianiello@users.noreply.github.com"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-lhaskell"
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "node": false,
+    "python": false,
+    "rust": false
+  }
+}
