@@ -1,12 +1,94 @@
 [
   {
+    "type": "code_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "code_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "code_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bird_track",
+          "named": true
+        },
+        {
+          "type": "line_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "line_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "root": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "code_block",
+          "named": true
+        },
+        {
+          "type": "comment_block",
+          "named": true
+        }
+      ]
+    }
   },
   {
-    "type": "hello",
-    "named": false
+    "type": "bird_track",
+    "named": true
+  },
+  {
+    "type": "line_content",
+    "named": true
   }
 ]

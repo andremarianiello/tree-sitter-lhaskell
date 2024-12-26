@@ -3,16 +3,98 @@
   "name": "lhaskell",
   "rules": {
     "source_file": {
-      "type": "STRING",
-      "value": "hello"
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_block"
+      }
+    },
+    "_block": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "comment_block"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "code_block"
+        }
+      ]
+    },
+    "comment_block": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "SYMBOL",
+          "name": "comment_line"
+        }
+      }
+    },
+    "comment_line": {
+      "type": "SYMBOL",
+      "name": "line_content"
+    },
+    "spaced_code_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\n"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "code_block"
+        },
+        {
+          "type": "STRING",
+          "value": "\n"
+        }
+      ]
+    },
+    "code_block": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "REPEAT1",
+        "content": {
+          "type": "SYMBOL",
+          "name": "code_line"
+        }
+      }
+    },
+    "code_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "bird_track"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "line_content"
+        }
+      ]
+    },
+    "bird_track": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "STRING",
+          "value": ">"
+        }
+      }
+    },
+    "line_content": {
+      "type": "PATTERN",
+      "value": "[^\\n]*\\n"
     }
   },
-  "extras": [
-    {
-      "type": "PATTERN",
-      "value": "\\s"
-    }
-  ],
+  "extras": [],
   "conflicts": [],
   "precedences": [],
   "externals": [],
